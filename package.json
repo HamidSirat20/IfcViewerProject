@@ -1,0 +1,21 @@
+{
+  "name": "ifcviewerproject",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@thatopen/components": "^2.4.4",
+    "@thatopen/fragments": "^2.4.0",
+    "@thatopen/ui": "^2.4.1",
+    "stats.js": "^0.17.0",
+    "three": "^0.173.0"
+  }
+}
