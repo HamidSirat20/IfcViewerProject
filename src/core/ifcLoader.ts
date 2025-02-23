@@ -1,5 +1,6 @@
 import * as WEBIFC from "web-ifc";
 import * as OBC from "@thatopen/components";
+import * as THREE from "three";
 
 export async function setupIfcLoader(components: OBC.Components) {
   const fragments = components.get(OBC.FragmentsManager);
@@ -42,6 +43,7 @@ export async function loadIfc(
     try {
       const model = await fragmentIfcLoader.load(buffer);
       world.scene.three.add(model);
+      world.meshes.add(model);
     } catch (error) {
       console.error("Error Loading IFC Model:", error);
     }

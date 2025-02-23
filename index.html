@@ -6,7 +6,6 @@
       name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons" />
@@ -14,56 +13,79 @@
       rel="icon"
       type="image/x-icon"
       href="https://thatopen.github.io/engine_components/resources/favicon.ico" />
-    <title>IfcViewerProject</title>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: "Plus Jakarta Sans", sans-serif;
-        overflow: hidden;
-      }
-
-      .full-screen {
-        width: 100vw;
-        height: 100vh;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .options-menu {
-        position: fixed;
-        min-width: unset;
-        top: 5px;
-        right: 5px;
-        max-height: calc(100vh - 10px);
-      }
-
-      .phone-menu-toggler {
-        visibility: hidden;
-      }
-
-      @media (max-width: 480px) {
-        .options-menu {
-          visibility: hidden;
-          bottom: 5px;
-          left: 5px;
-        }
-
-        .options-menu-visible {
-          visibility: visible;
-        }
-
-        .phone-menu-toggler {
-          visibility: visible;
-          position: fixed;
-          top: 5px;
-          right: 5px;
-        }
-      }
-    </style>
+    <title>BIM Application</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   </head>
-
   <body>
+    <div class="ribbon">
+      <div class="ribbon-tab" data-tab="home" id="import-file">
+        <i class="fa-solid fa-upload"></i>
+      </div>
+
+      <div class="ribbon-separator"></div>
+
+      <div class="ribbon-tab" data-tab="view" id="section">
+        <i class="fa-solid fa-hand-scissors"></i>
+        <ul id="list-table">
+          <li id="table-one"></li>
+          <li id="table-two"></li>
+          <li id="table-three"></li>
+        </ul>
+      </div>
+
+      <div class="ribbon-tab" data-tab="tools">
+        <span class="material-icons">build</span>
+        Tools
+      </div>
+
+      <div class="ribbon-group" data-tab-content="home">
+        <bim-button class="ribbon-button">
+          <span class="material-icons">upload</span>
+          Open
+        </bim-button>
+        <bim-button class="ribbon-button">
+          <span class="material-icons">save</span>
+          Save
+        </bim-button>
+        <div class="ribbon-separator"></div>
+        <bim-button class="ribbon-button">
+          <span class="material-icons">content_copy</span>
+          Copy
+        </bim-button>
+      </div>
+
+      <div class="ribbon-group" data-tab-content="view" hidden>
+        <bim-button class="ribbon-button">
+          <span class="material-icons">zoom_in</span>
+          Zoom
+        </bim-button>
+        <bim-button class="ribbon-button">
+          <span class="material-icons">rotate_3d</span>
+          Orbit
+        </bim-button>
+        <div class="ribbon-separator"></div>
+        <bim-button class="ribbon-button">
+          <span class="material-icons">layers</span>
+          Layers
+        </bim-button>
+      </div>
+
+      <!-- Tools Tab Content -->
+      <div class="ribbon-group" data-tab-content="tools" hidden>
+        <bim-button class="ribbon-button">
+          <span class="material-icons">straighten</span>
+          Measure
+        </bim-button>
+        <bim-button class="ribbon-button">
+          <span class="material-icons">merge</span>
+          Clash Detection
+        </bim-button>
+      </div>
+    </div>
+
     <div class="full-screen" id="container"></div>
     <script type="module" src="./main.ts"></script>
   </body>
